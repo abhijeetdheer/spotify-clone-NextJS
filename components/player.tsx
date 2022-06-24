@@ -8,7 +8,7 @@ import {
     RangeSliderThumb,
     Center,
     Flex,
-    Text, useChakra,
+    Text,
 } from "@chakra-ui/react";
 import ReactHowler from 'react-howler'
 import { useEffect, useRef, useState } from 'react'
@@ -177,7 +177,7 @@ const Player = ({songs, activeSong}) =>{
                         <RangeSlider aria-label={['min','max']}
                                      step={0.1}
                                      min={0}
-                                     max={duration ? duration.toFixed(2) : 0}
+                                     max={duration ? (duration.toFixed(2) as unknown as number) : 0}
                                     id="player-range"
                                      onChange={onSeek}
                                      value={[seek]}
